@@ -1,0 +1,517 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>Glitch</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Oswald');
+
+
+    body {
+      background: black;
+      font-family: 'Oswald', Arial, sans-serif;
+      font-style: italic;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    .glitch,
+    .glow {
+      color: #c9ccd1;
+      position: relative;
+      font-size: 9vw;
+      animation: glitch 5s 5s infinite;
+    }
+
+    .glitch::before,
+    .glow::before {
+      content: attr(data-text);
+      position: absolute;
+      left: -2px;
+      text-shadow: -5px 0 cyan;
+      background: black;
+      overflow: hidden;
+      top: 0;
+      animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
+    }
+
+    .glitch::after,
+    .glow::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 2px;
+      text-shadow: -5px 0 darkred;
+      background: black;
+      overflow: hidden;
+      top: 0;
+      animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
+    }
+
+    @keyframes glitch {
+      1% {
+        transform: rotateX(10deg) skewX(90deg);
+      }
+
+      2% {
+        transform: rotateX(0deg) skewX(0deg);
+      }
+    }
+
+    @keyframes noise-1 {
+      3.3333333333% {
+        clip-path: inset(69px 0 4px 0);
+      }
+
+      6.6666666667% {
+        clip-path: inset(50px 0 7px 0);
+      }
+
+      10% {
+        clip-path: inset(95px 0 3px 0);
+      }
+
+      13.3333333333% {
+        clip-path: inset(28px 0 39px 0);
+      }
+
+      16.6666666667% {
+        clip-path: inset(63px 0 12px 0);
+      }
+
+      20% {
+        clip-path: inset(2px 0 5px 0);
+      }
+
+      23.3333333333% {
+        clip-path: inset(64px 0 25px 0);
+      }
+
+      26.6666666667% {
+        clip-path: inset(10px 0 2px 0);
+      }
+
+      30% {
+        clip-path: inset(96px 0 3px 0);
+      }
+
+      33.3333333333% {
+        clip-path: inset(9px 0 27px 0);
+      }
+
+      36.6666666667% {
+        clip-path: inset(55px 0 35px 0);
+      }
+
+      40% {
+        clip-path: inset(71px 0 26px 0);
+      }
+
+      43.3333333333% {
+        clip-path: inset(25px 0 55px 0);
+      }
+
+      46.6666666667% {
+        clip-path: inset(9px 0 43px 0);
+      }
+
+      50% {
+        clip-path: inset(34px 0 4px 0);
+      }
+
+      53.3333333333% {
+        clip-path: inset(44px 0 27px 0);
+      }
+
+      56.6666666667% {
+        clip-path: inset(66px 0 11px 0);
+      }
+
+      60% {
+        clip-path: inset(31px 0 16px 0);
+      }
+
+      63.3333333333% {
+        clip-path: inset(25px 0 16px 0);
+      }
+
+      66.6666666667% {
+        clip-path: inset(76px 0 8px 0);
+      }
+
+      70% {
+        clip-path: inset(42px 0 7px 0);
+      }
+
+      73.3333333333% {
+        clip-path: inset(46px 0 48px 0);
+      }
+
+      76.6666666667% {
+        clip-path: inset(25px 0 5px 0);
+      }
+
+      80% {
+        clip-path: inset(39px 0 23px 0);
+      }
+
+      83.3333333333% {
+        clip-path: inset(18px 0 67px 0);
+      }
+
+      86.6666666667% {
+        clip-path: inset(61px 0 31px 0);
+      }
+
+      90% {
+        clip-path: inset(62px 0 18px 0);
+      }
+
+      93.3333333333% {
+        clip-path: inset(72px 0 1px 0);
+      }
+
+      96.6666666667% {
+        clip-path: inset(80px 0 9px 0);
+      }
+
+      100% {
+        clip-path: inset(79px 0 14px 0);
+      }
+    }
+
+    @keyframes noise-2 {
+      0% {
+        clip-path: inset(1px 0 20px 0);
+      }
+
+      3.3333333333% {
+        clip-path: inset(56px 0 41px 0);
+      }
+
+      6.6666666667% {
+        clip-path: inset(57px 0 6px 0);
+      }
+
+      10% {
+        clip-path: inset(37px 0 52px 0);
+      }
+
+      13.3333333333% {
+        clip-path: inset(64px 0 11px 0);
+      }
+
+      16.6666666667% {
+        clip-path: inset(77px 0 11px 0);
+      }
+
+      20% {
+        clip-path: inset(28px 0 63px 0);
+      }
+
+      23.3333333333% {
+        clip-path: inset(92px 0 2px 0);
+      }
+
+      26.6666666667% {
+        clip-path: inset(37px 0 33px 0);
+      }
+
+      30% {
+        clip-path: inset(32px 0 3px 0);
+      }
+
+      33.3333333333% {
+        clip-path: inset(24px 0 25px 0);
+      }
+
+      36.6666666667% {
+        clip-path: inset(82px 0 13px 0);
+      }
+
+      40% {
+        clip-path: inset(11px 0 43px 0);
+      }
+
+      43.3333333333% {
+        clip-path: inset(70px 0 19px 0);
+      }
+
+      46.6666666667% {
+        clip-path: inset(28px 0 14px 0);
+      }
+
+      50% {
+        clip-path: inset(20px 0 70px 0);
+      }
+
+      53.3333333333% {
+        clip-path: inset(3px 0 35px 0);
+      }
+
+      56.6666666667% {
+        clip-path: inset(54px 0 22px 0);
+      }
+
+      60% {
+        clip-path: inset(75px 0 26px 0);
+      }
+
+      63.3333333333% {
+        clip-path: inset(18px 0 31px 0);
+      }
+
+      66.6666666667% {
+        clip-path: inset(35px 0 55px 0);
+      }
+
+      70% {
+        clip-path: inset(76px 0 5px 0);
+      }
+
+      73.3333333333% {
+        clip-path: inset(80px 0 11px 0);
+      }
+
+      76.6666666667% {
+        clip-path: inset(83px 0 8px 0);
+      }
+
+      80% {
+        clip-path: inset(18px 0 52px 0);
+      }
+
+      83.3333333333% {
+        clip-path: inset(58px 0 42px 0);
+      }
+
+      86.6666666667% {
+        clip-path: inset(100px 0 1px 0);
+      }
+
+      90% {
+        clip-path: inset(94px 0 2px 0);
+      }
+
+      93.3333333333% {
+        clip-path: inset(9px 0 34px 0);
+      }
+
+      96.6666666667% {
+        clip-path: inset(56px 0 15px 0);
+      }
+
+      100% {
+        clip-path: inset(40px 0 32px 0);
+      }
+    }
+
+    .scanlines {
+      overflow: hidden;
+      mix-blend-mode: difference;
+    }
+
+    .scanlines::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: repeating-linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.05) 0.5%, transparent 1%);
+      animation: fudge 7s ease-in-out alternate infinite;
+    }
+
+    @keyframes fudge {
+      from {
+        transform: translate(0px, 0px);
+      }
+
+      to {
+        transform: translate(0px, 2%);
+      }
+    }
+
+    .glow {
+      text-shadow: 0 0 1000px #dfbfbf;
+      color: transparent;
+      position: absolute;
+      top: 0;
+    }
+
+    .subtitle {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 100;
+      font-size: 0.8vw;
+      color: rgba(165, 141, 141, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 1em;
+      text-align: center;
+      position: absolute;
+      left: 17%;
+      animation: glitch-2 5s 5.02s infinite;
+    }
+
+    @keyframes glitch-2 {
+      1% {
+        transform: rotateX(10deg) skewX(70deg);
+      }
+
+      2% {
+        transform: rotateX(0deg) skewX(0deg);
+      }
+    }
+  </style>
+
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("{{ ctf_start }}").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result in the element with id="demo"
+      document.getElementById("demo").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  </script>
+
+  
+</head>
+
+<body>
+  <section>
+    <div class="container">
+      <div class="glitch" data-text="ESPIONAGE">ESPIONAGE</div>
+      <div class="glow">ESPIONAGE</div>
+      <p class="subtitle">ISSessions CTF 2024</p>
+    </div>
+    <p id="demo"></p>
+    <div class="scanlines"></div>
+  </section>
+
+  <!-- create 4 blank sections, about, registration, faq, sponsors -->
+  <section>
+    <div class="about">
+      <h1>About</h1>
+      <p>Dive into the world of digital espionage with ISSessions 2024 CTF. Unravel mysteries, crack codes, and outsmart
+        your opponents in this thrilling CTF challenge.</p>
+      <p>
+        The CTF will be held on <b>{{ ctf_start }}</b> and will run for 48
+        hours. The CTF will be hosted on the ISSessions Discord server. Test your problem-solving and teamwork skills
+        with a variety of challenges including web, forensics, crypto, and more. Perfect for hackers, developers, and
+        digital enthusiasts ready for an
+        espionage-themed adventure. The CTF will be
+        beginner friendly and will have challenges for all skill levels.
+        We will be giving out prizes to the top 3 teams. The prizes will
+        be announced closer to the CTF date. We will also be giving out
+        prizes for the best writeups.
+      </p>
+      <p>
+        Whether you're a student, a professional, or simply a cybersecurity enthusiast, this event is the perfect arena
+        to showcase your skills, learn new ones, and network with like-minded individuals.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="registration">
+      <h1>Registration</h1>
+      <p>Registration for Espionage 2024 will be opening shortly. Stay tuned for the link to join this thrilling
+        expierence. Whether you're a beginner or a seasoned expert, we have challenges for everyone. Don't miss your
+        chance to be part of this unique experience!</p>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="faq">
+      <h1>FAQ</h1>
+      <p>
+        <b>What is a CTF?</b>
+        <br />
+        A CTF is a competition where teams compete to solve challenges
+        that test their skills in a variety of areas including web,
+        forensics, crypto, OSINT, pwn, and more.
+      </p>
+      <p>
+        <b>Do I need to be an expert in cybersecurity to participate?</b>
+        <br>
+        No! Espionage 2024 welcomes participants of all skill levels.
+      </p>
+      <p>
+        <b>Are there any prerequisites for joining?</b>
+        <br>
+        No specific prerequisites are required, just bring your laptop, enthusiasm and willingness to learn!
+      </p>
+      <p>
+        <b>How do I register?</b>
+        <br />
+        Registration links will be going out shortly. You
+        will need to provide your name, email, and discord username. You
+        will also need to provide your team name and the names of your
+        teammates. You can register as a team of up to 4 people. If you
+        do not have a team, you can register as an individual and we will
+        assign you to a team.
+      </p>
+      <p>
+        <b>What are the prizes?</b>
+        <br />
+        We will be giving out amazing prizes to the top 3 teams. The prizes will
+        be announced closer to the CTF date. We will also be giving out
+        prizes for the best writeups.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sponsors">
+      <h1>Sponsors</h1>
+      <p>
+        We would like to thank our sponsors for making this event
+        possible.
+      </p>
+      <p>
+        <b>ISSessions</b>
+        <br />
+        ISSessions is a student run cybersecurity club at Sheridan College. We couldn't do these events without the help
+        of our sponsors! Interested in supporting the next generation of cybersecurity talent? Sponsor us today and be a
+        part of Cipher Shadows 2024. Your support fuels the spirit of cybersecurity and innovation.
+      </p>
+    </div>
+  </section>
+
+
+  <div id="container">
+    <div id="message">
+      <a id="animate" href="#">Transmit</a>
+    </div>
+  </div>
+
+</body>
+
+</html>
