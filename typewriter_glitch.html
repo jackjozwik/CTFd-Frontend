@@ -17,18 +17,17 @@
             margin: 0;
         }
 
-        p,
-        a {
+        p{
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
             font-family: Courier, monospace;
             font-smoothing: antialiased;
             margin: 0.8em 0;
             font-size: 18px;
-            color: #B95;
+            color: #4AF626;
         }
 
         .ghost,
-        .glitch {
+        .gltch {
             opacity: 0.25;
         }
 
@@ -45,7 +44,7 @@
         #animate {
             text-shadow: 0 0 8px rgba(209, 194, 165, 0.1);
             position: absolute;
-            color: #4f4228;
+            color: #4AF626;
             bottom: 0;
         }
 
@@ -97,7 +96,7 @@
         function scramble(element, text, options) {
             let defaults = {
                 probability: 0.2,
-                glitches: '-|/\\',
+                gltches: '-|/\\',
                 blank: '',
                 duration: text.length * 40,
                 ease: 'easeInOutQuad',
@@ -115,11 +114,11 @@
                 return `<span class="${classes}">${text}</span>`;
             }
 
-            let glitchText = settings.glitches;
-            let glitchCharacters = glitchText.split('');
-            let glitchLength = glitchCharacters.length;
-            let glitchProbability = settings.probability;
-            let glitches = glitchCharacters.map(letter => wrap(letter, 'glitch'));
+            let gltchText = settings.gltches;
+            let gltchCharacters = gltchText.split('');
+            let gltchLength = gltchCharacters.length;
+            let gltchProbability = settings.probability;
+            let gltches = gltchCharacters.map(letter => wrap(letter, 'gltch'));
 
             let ghostText = $element.text();
             let ghostCharacters = ghostText.split('');
@@ -132,11 +131,11 @@
             let output = [];
 
             for (let i = 0; i < textLength; i++) {
-                let glitchIndex = Math.floor(Math.random() * (glitchLength - 1));
-                let glitchCharacter = glitches[glitchIndex];
+                let gltchIndex = Math.floor(Math.random() * (gltchLength - 1));
+                let gltchCharacter = gltches[gltchIndex];
                 let ghostCharacter = ghosts[i] || settings.blank;
-                let addGlitch = Math.random() < glitchProbability;
-                let character = addGlitch ? glitchCharacter : ghostCharacter;
+                let addgltch = Math.random() < gltchProbability;
+                let character = addgltch ? gltchCharacter : ghostCharacter;
                 output.push(character);
             }
 
